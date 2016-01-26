@@ -51,18 +51,6 @@ exports.update = function(req, res) {
   /* save the coordinates (located in req.results if there is an address property) */
   /* Save the article */
 
-  //console.log(req.listing); //prints the following JSON
-  /*
-  { coordinates: { longitude: -82.3435159, latitude: 29.6482541 },
-  __v: 0,
-  address: '432 Newell Dr, Gainesville, FL 32611',
-  name: 'Introduction to Software Engineering',
-  code: 'CEN3035',
-  updated_at: Sat Jan 23 2016 22:14:01 GMT-0500 (EST),
-  created_at: Sat Jan 23 2016 22:14:01 GMT-0500 (EST),
-  _id: 56a44179a88619490bad076b }
-  */
-
   listing.address = req.body.address;
   listing.name = req.body.name;
   listing.code = req.body.code;
@@ -94,7 +82,6 @@ exports.delete = function(req, res) {
       console.log(err);
       res.status(400).send(err);
     }
-    //TODO: Is this what we want to be sending?
     res.send('Deleted listing!');
   });
 
